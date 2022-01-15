@@ -32,4 +32,17 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
+  createProduct(): void {
+    const newProduct: Product = {
+      id: '222',
+      title: 'Nuevos desde angular',
+      image: './assets/images/banner-1.jpg',
+      price: 123,
+      description: 'prueba desde angular'
+    };
+    this.productsService.createProduct(newProduct)
+      .subscribe(product => {
+        console.log(product);
+      });
+  }
 }
