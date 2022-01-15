@@ -29,4 +29,8 @@ export class ProductsService {
   updateProduct(id: string, changes: Partial<Product>): Observable<Product> {
     return this.http.put<Product>(`${environment.host}/products/${id}`, changes);
   }
+
+  deleteProduct(id: string): Observable<boolean> {
+    return this.http.delete<boolean>(`${environment.host}/products/${id}`);
+  }
 }

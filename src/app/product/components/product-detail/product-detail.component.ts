@@ -46,7 +46,7 @@ export class ProductDetailComponent implements OnInit {
       });
   }
 
-  updateProduct() {
+  updateProduct(): void {
     const updateProduct: Partial<Product> = {
       title: 'update desde angular',
       price: 1111,
@@ -55,5 +55,12 @@ export class ProductDetailComponent implements OnInit {
       .subscribe(product => {
         console.log(product);
       });
+  }
+
+  deleteProduct(): void {
+    this.productsService.deleteProduct('222')
+      .subscribe(rta => {
+        console.log(rta);
+    });
   }
 }
