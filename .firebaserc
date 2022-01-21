@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "platzi-curso-angular": {
+      "hosting": {
+        "curso-angular-platzi": [
+          "platzi-curso-angular"
+        ]
+      }
+    }
+  }
+}
