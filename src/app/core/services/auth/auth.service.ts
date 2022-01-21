@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import firebase from 'firebase';
 import UserCredential = firebase.auth.UserCredential;
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +23,9 @@ export class AuthService {
 
   logout(): any {
     this.afa.signOut();
+  }
+
+  hasUser(): Observable<any> {
+    return this.afa.authState;
   }
 }
