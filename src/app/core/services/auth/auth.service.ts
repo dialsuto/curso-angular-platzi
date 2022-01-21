@@ -15,4 +15,12 @@ export class AuthService {
   createUser(email: string, password: string): Promise<UserCredential> {
     return this.afa.createUserWithEmailAndPassword(email, password);
   }
+
+  login(email: string, password: string): Promise<UserCredential> {
+    return this.afa.signInWithEmailAndPassword(email, password);
+  }
+
+  logout(): any {
+    this.afa.signOut();
+  }
 }
